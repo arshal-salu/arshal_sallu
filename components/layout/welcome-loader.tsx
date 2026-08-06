@@ -97,7 +97,7 @@ export function WelcomeLoader() {
                   {/* Big Square Profile Avatar (Black & White) */}
                   <div className="relative w-36 h-36 rounded-xl overflow-hidden border border-neutral-200 bg-neutral-100 shadow-inner">
                     <Image
-                      src="/images/projects/ChatGPT Image Jul 28, 2026, 08_04_37 AM (1).png"
+                      src="/images/projects/avatar.png"
                       alt="Muhammed Arshal V"
                       fill
                       sizes="144px"
