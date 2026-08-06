@@ -7,7 +7,7 @@ import { SECTION_IDS } from '@/constants'
 export function AILabSection() {
   return (
     <Section
-      id={SECTION_IDS.experiments}
+      id="experiments"
       className="relative w-full border-t border-[var(--color-border-subtle)]"
       aria-labelledby="experiments-heading"
     >
