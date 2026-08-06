@@ -57,7 +57,7 @@ export function ContactSection() {
   return (
     <Section
       id={SECTION_IDS.contact}
-      className="relative w-full border-t border-[var(--color-border-subtle)] overflow-hidden"
+      className="relative w-full border-t border-[var(--color-border-subtle)] overflow-hidden py-0"
       aria-labelledby="contact-heading"
     >
       {/* Blueprint schematic geometric line pattern in the background */}
@@ -122,7 +122,7 @@ export function ContactSection() {
         {/* 2. Main Closing Section Content */}
         <div
           ref={contentRef}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center pt-24 pb-16 relative z-10"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center pt-24 pb-20 lg:pb-32 relative z-10"
         >
           {/* Left Column: Heading, Description, Availability */}
           <motion.div
