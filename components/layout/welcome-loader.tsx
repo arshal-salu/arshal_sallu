@@ -11,16 +11,6 @@ export function WelcomeLoader() {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    // Check session storage so reload doesn't force intro overlay
-    if (typeof window !== 'undefined') {
-      const introSeen = sessionStorage.getItem('intro_seen')
-      if (introSeen === 'true') {
-        setIsComplete(true)
-        setShouldRender(false)
-        return
-      }
-    }
-
     setIsMounted(true)
     // Block document scrolling during intro screen
     document.body.style.overflow = 'hidden'
@@ -31,9 +21,6 @@ export function WelcomeLoader() {
   }, [])
 
   const handleExplore = () => {
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem('intro_seen', 'true')
-    }
     setIsComplete(true)
     document.body.style.overflow = ''
   }
