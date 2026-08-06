@@ -94,15 +94,15 @@ export function WelcomeLoader() {
                   animate="visible"
                   className="w-full max-w-[340px] bg-white border border-neutral-200 p-8 flex flex-col items-center text-center gap-6 relative overflow-hidden rounded-2xl group transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
                 >
-                  {/* Big Profile Avatar */}
-                  <div className="relative w-36 h-36 rounded-full overflow-hidden border-2 border-neutral-100 bg-neutral-50 shadow-inner">
+                  {/* Big Square Profile Avatar (Black & White) */}
+                  <div className="relative w-36 h-36 rounded-xl overflow-hidden border border-neutral-200 bg-neutral-100 shadow-inner">
                     <Image
                       src="/images/projects/ChatGPT Image Jul 28, 2026, 08_04_37 AM (1).png"
                       alt="Muhammed Arshal V"
                       fill
                       sizes="144px"
                       priority
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="object-cover grayscale transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 
