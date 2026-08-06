@@ -173,6 +173,7 @@ export function HeroSection() {
                     src="/images/projects/ChatGPT Image Jul 28, 2026, 08_04_37 AM (1).png"
                     alt="Muhammed Arshal V"
                     fill
+                    sizes="80px"
                     priority
                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
