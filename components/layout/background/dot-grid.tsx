@@ -298,11 +298,11 @@ export function DotGrid({
   }, [maxSpeed, speedTrigger, proximity, resistance, returnDuration, shockRadius, shockStrength])
 
   return (
-    <section className={`dot-grid ${className}`} style={style}>
+    <div className={`dot-grid ${className}`} style={{ ...style, position: 'absolute', inset: 0, pointerEvents: 'none' }}>
       <div ref={wrapperRef} className="dot-grid__wrap">
         <canvas ref={canvasRef} className="dot-grid__canvas" />
       </div>
-    </section>
+    </div>
   )
 }
 
