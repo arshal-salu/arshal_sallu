@@ -19,7 +19,7 @@ export function WorkSection() {
 
       {/* 2. Mobile/Tablet version: Linear scrollable chapters */}
       <div className="block lg:hidden">
-        <Container size="2xl" className="py-16 sm:py-24">
+        <Container size="2xl" className="py-12 sm:py-16">
           <div className="flex flex-col gap-4 mb-16">
             <span className="font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white">
               Case Studies

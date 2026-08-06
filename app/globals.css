@@ -72,7 +72,7 @@
   --space-24:      96px;
   --space-32:      128px;
   --space-40:      160px;
-  --space-section: clamp(4rem, 10vw, 8rem);
+  --space-section: clamp(2rem, 5vw, 4rem);
 
   /* ─── BORDER RADIUS ─────────────────────────────────────── */
   --radius-none: 0px;

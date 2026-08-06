@@ -153,7 +153,7 @@ export function MissionSection() {
       ref={ref}
       id={SECTION_IDS.about}
       aria-labelledby="mission-heading"
-      className="relative w-full py-20 lg:py-32 flex items-center border-t border-[var(--color-border-subtle)]"
+      className="relative w-full py-12 lg:py-16 flex items-center border-t border-[var(--color-border-subtle)]"
     >
       {/*
        * Subtle ambient glow — positioned behind the section content.

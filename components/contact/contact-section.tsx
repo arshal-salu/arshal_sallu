@@ -92,7 +92,7 @@ export function ContactSection() {
         {/* 1. Centered Transition Statement Block */}
         <div
           ref={statementRef}
-          className="flex flex-col items-center justify-center text-center py-20 lg:py-32 border-b border-[var(--color-border-subtle)]/40"
+          className="flex flex-col items-center justify-center text-center py-12 lg:py-16 border-b border-[var(--color-border-subtle)]/40"
         >
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -122,7 +122,7 @@ export function ContactSection() {
         {/* 2. Main Closing Section Content */}
         <div
           ref={contentRef}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center pt-24 pb-20 lg:pb-32 relative z-10"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center pt-16 pb-16 lg:pb-24 relative z-10"
         >
           {/* Left Column: Heading, Description, Availability */}
           <motion.div
