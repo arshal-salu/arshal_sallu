@@ -1,28 +1,42 @@
 'use client'
 
-import { useRef, useEffect, useCallback, useMemo } from 'react'
+import React, { useRef, useEffect, useCallback, useMemo } from 'react'
 import { gsap } from 'gsap'
+import { InertiaPlugin } from 'gsap/InertiaPlugin'
 import './dot-grid.css'
 
-const throttle = (func: (e: MouseEvent) => void, limit: number) => {
+gsap.registerPlugin(InertiaPlugin)
+
+const throttle = <T extends (...args: any[]) => void>(func: T, limit: number) => {
   let lastCall = 0
-  return function (e: MouseEvent) {
+  return function (this: any, ...args: Parameters<T>) {
     const now = performance.now()
     if (now - lastCall >= limit) {
       lastCall = now
-      func(e)
+      func.apply(this, args)
     }
   }
 }
 
 function hexToRgb(hex: string) {
   const m = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i)
-  if (!m) return { r: 79, g: 126, b: 247 } // default to primary blue if match fails
+  if (!m) return { r: 0, g: 0, b: 0 }
   return {
     r: parseInt(m[1], 16),
     g: parseInt(m[2], 16),
     b: parseInt(m[3], 16)
   }
+}
+
+interface PointerState {
+  x: number
+  y: number
+  vx: number
+  vy: number
+  speed: number
+  lastTime: number
+  lastX: number
+  lastY: number
 }
 
 interface DotItem {
@@ -50,14 +64,14 @@ interface DotGridProps {
 }
 
 export function DotGrid({
-  dotSize = 3,
-  gap = 28,
-  baseColor = '#1f1f1f',
-  activeColor = '#4f7ef7',
-  proximity = 120,
+  dotSize = 16,
+  gap = 32,
+  baseColor = '#5227FF',
+  activeColor = '#5227FF',
+  proximity = 150,
   speedTrigger = 100,
-  shockRadius = 200,
-  shockStrength = 4,
+  shockRadius = 250,
+  shockStrength = 5,
   maxSpeed = 5000,
   resistance = 750,
   returnDuration = 1.5,
@@ -67,9 +81,9 @@ export function DotGrid({
   const wrapperRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const dotsRef = useRef<DotItem[]>([])
-  const pointerRef = useRef({
-    x: -9999,
-    y: -9999,
+  const pointerRef = useRef<PointerState>({
+    x: 0,
+    y: 0,
     vx: 0,
     vy: 0,
     speed: 0,
@@ -175,14 +189,19 @@ export function DotGrid({
   }, [proximity, baseColor, activeRgb, baseRgb, circlePath])
 
   useEffect(() => {
-    buildGrid()
     if (typeof window === 'undefined') return
-    const ro = new ResizeObserver(buildGrid)
-    if (wrapperRef.current) {
-      ro.observe(wrapperRef.current)
+    buildGrid()
+    let ro: ResizeObserver | null = null
+    const w = window as any
+    if ('ResizeObserver' in w) {
+      ro = new ResizeObserver(buildGrid)
+      wrapperRef.current && ro.observe(wrapperRef.current)
+    } else {
+      w.addEventListener('resize', buildGrid)
     }
     return () => {
-      ro.disconnect()
+      if (ro) ro.disconnect()
+      else w.removeEventListener('resize', buildGrid)
     }
   }, [buildGrid])
 
@@ -209,8 +228,9 @@ export function DotGrid({
       pr.vy = vy
       pr.speed = speed
 
-      const rect = canvasRef.current?.getBoundingClientRect()
-      if (!rect) return
+      const canvas = canvasRef.current
+      if (!canvas) return
+      const rect = canvas.getBoundingClientRect()
       pr.x = e.clientX - rect.left
       pr.y = e.clientY - rect.top
 
@@ -221,29 +241,26 @@ export function DotGrid({
           gsap.killTweensOf(dot)
           const pushX = dot.cx - pr.x + vx * 0.005
           const pushY = dot.cy - pr.y + vy * 0.005
-
           gsap.to(dot, {
-            xOffset: pushX,
-            yOffset: pushY,
-            duration: 0.3,
-            ease: 'power2.out',
+            inertia: { xOffset: pushX, yOffset: pushY, resistance },
             onComplete: () => {
               gsap.to(dot, {
                 xOffset: 0,
                 yOffset: 0,
                 duration: returnDuration,
                 ease: 'elastic.out(1,0.75)'
-              })
+              } as any)
               dot._inertiaApplied = false
             }
-          })
+          } as any)
         }
       }
     }
 
     const onClick = (e: MouseEvent) => {
-      const rect = canvasRef.current?.getBoundingClientRect()
-      if (!rect) return
+      const canvas = canvasRef.current
+      if (!canvas) return
+      const rect = canvas.getBoundingClientRect()
       const cx = e.clientX - rect.left
       const cy = e.clientY - rect.top
       for (const dot of dotsRef.current) {
@@ -254,22 +271,18 @@ export function DotGrid({
           const falloff = Math.max(0, 1 - dist / shockRadius)
           const pushX = (dot.cx - cx) * shockStrength * falloff
           const pushY = (dot.cy - cy) * shockStrength * falloff
-
           gsap.to(dot, {
-            xOffset: pushX,
-            yOffset: pushY,
-            duration: 0.3,
-            ease: 'power2.out',
+            inertia: { xOffset: pushX, yOffset: pushY, resistance },
             onComplete: () => {
               gsap.to(dot, {
                 xOffset: 0,
                 yOffset: 0,
                 duration: returnDuration,
                 ease: 'elastic.out(1,0.75)'
-              })
+              } as any)
               dot._inertiaApplied = false
             }
-          })
+          } as any)
         }
       }
     }
@@ -285,11 +298,12 @@ export function DotGrid({
   }, [maxSpeed, speedTrigger, proximity, resistance, returnDuration, shockRadius, shockStrength])
 
   return (
-    <div className={`dot-grid ${className}`} style={{ ...style, position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+    <section className={`dot-grid ${className}`} style={style}>
       <div ref={wrapperRef} className="dot-grid__wrap">
         <canvas ref={canvasRef} className="dot-grid__canvas" />
       </div>
-    </div>
+    </section>
   )
 }
+
 export default DotGrid
