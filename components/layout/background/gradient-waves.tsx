@@ -392,7 +392,20 @@ export function GradientWaves({
     parallaxStrength
   ])
 
-  return <div ref={containerRef} className={`gradient-waves-container ${className}`.trim()} style={style} />
+  return (
+    <div
+      ref={containerRef}
+      className={`gradient-waves-container ${className}`.trim()}
+      style={{
+        ...style,
+        position: 'absolute',
+        inset: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none'
+      }}
+    />
+  )
 }
 
 export default GradientWaves
