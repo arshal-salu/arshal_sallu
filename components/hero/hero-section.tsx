@@ -58,8 +58,8 @@ export function HeroSection() {
       <DotGrid
         dotSize={3}
         gap={28}
-        baseColor="#000000"
-        activeColor="#00ff66"
+        baseColor="#0f0f10"
+        activeColor="#113a2c"
         proximity={120}
         shockRadius={200}
         shockStrength={4}
