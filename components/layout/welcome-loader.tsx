@@ -108,13 +108,13 @@ export function WelcomeLoader() {
 
                   {/* Bottom Half: Title details with padding */}
                   <div className="p-8 flex flex-col items-center text-center gap-2">
-                    <h2 className="font-[var(--font-heading)] font-bold text-neutral-900 text-xl tracking-wide">
-                      Muhammed Arshal V
+                    <h2 className="font-[var(--font-heading)] font-bold text-xl tracking-wide" style={{ color: '#171717' }}>
+                      Muhammed Arshal v
                     </h2>
-                    <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest font-semibold">
+                    <p className="font-mono text-[10px] uppercase tracking-widest font-semibold" style={{ color: '#525252' }}>
                       AI Full Stack Developer
                     </p>
-                    <span className="text-xs text-neutral-600 font-medium italic mt-1">
+                    <span className="text-xs font-medium italic mt-1" style={{ color: '#737373' }}>
                       Seeking for Internship
                     </span>
                   </div>
