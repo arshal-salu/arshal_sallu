@@ -92,22 +92,22 @@ export function WelcomeLoader() {
                   variants={cardVariants}
                   initial="hidden"
                   animate="visible"
-                  className="w-full max-w-[340px] bg-white border border-neutral-200 p-8 flex flex-col items-center text-center gap-6 relative overflow-hidden rounded-2xl group transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                  className="w-full max-w-[340px] bg-white border border-neutral-200 flex flex-col relative overflow-hidden rounded-2xl group transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
                 >
-                  {/* Big Square Profile Avatar (Black & White, Tighter professional rounding) */}
-                  <div className="relative w-48 h-48 rounded-md overflow-hidden border border-neutral-200 bg-neutral-100 shadow-sm">
+                  {/* Top Half: Big Bold Flush Image */}
+                  <div className="relative w-full aspect-square bg-neutral-100 border-b border-neutral-200 overflow-hidden">
                     <Image
                       src="/images/projects/avatar.png"
                       alt="Muhammed Arshal V"
                       fill
-                      sizes="192px"
+                      sizes="340px"
                       priority
-                      className="object-cover grayscale transition-transform duration-500 group-hover:scale-102"
+                      className="object-cover grayscale transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 
-                  {/* Title details */}
-                  <div className="flex flex-col items-center gap-2">
+                  {/* Bottom Half: Title details with padding */}
+                  <div className="p-8 flex flex-col items-center text-center gap-2">
                     <h2 className="font-[var(--font-heading)] font-bold text-neutral-900 text-xl tracking-wide">
                       Muhammed Arshal V
                     </h2>
