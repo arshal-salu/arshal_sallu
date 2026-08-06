@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { DotGrid } from './background/dot-grid'
 
 export function WelcomeLoader() {
   const [isComplete, setIsComplete] = useState(false)
@@ -82,8 +83,22 @@ export function WelcomeLoader() {
           className="fixed inset-0 bg-black flex items-center justify-center p-6 sm:p-12 overflow-y-auto"
           style={{ zIndex: 99999 }} // Overlay above navbar and layout layers
         >
+          {/* Interactive Dot Grid Background Effect */}
+          <DotGrid
+            dotSize={10}
+            gap={15}
+            baseColor="#5227FF"
+            activeColor="#113a2c"
+            proximity={120}
+            shockRadius={250}
+            shockStrength={5}
+            resistance={750}
+            returnDuration={1.5}
+            className="absolute inset-0 z-0 opacity-40 pointer-events-none"
+          />
+
           {/* Centered responsive layout grid */}
-          <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mx-auto my-auto py-12">
+          <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mx-auto my-auto py-12 relative z-10">
             
             {/* Left Column: Profile Card Sidebar (White Box with Big Image) */}
             {isMounted && (
