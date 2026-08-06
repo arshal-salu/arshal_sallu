@@ -74,8 +74,8 @@ export function WelcomeLoader() {
           <DotGrid
             dotSize={10}
             gap={15}
-            baseColor="#5227FF"
-            activeColor="#113a2c"
+            baseColor="#000000"
+            activeColor="#00ff66"
             proximity={120}
             shockRadius={250}
             shockStrength={5}
