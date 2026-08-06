@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image', title: 'Muhammed Arshal V - AI Developer',
     description: 'AI Developer building intelligent applications using Generative AI and modern web technologies.',
-    creator: '@arshalv', images: ['/og-image.png'],
+    creator: '@arshal__salu', images: ['/og-image.png'],
   },
   icons: {
     icon: [{ url: '/favicon.ico', sizes: 'any' }, { url: '/icon.svg', type: 'image/svg+xml' }],
@@ -53,9 +53,9 @@ const jsonLd = {
   jobTitle: 'AI Developer & Full-Stack Engineer',
   description: 'AI Developer building intelligent applications using Generative AI and modern web technologies.',
   sameAs: [
-    'https://github.com/arshalv',
-    'https://instagram.com/arshalv',
-    'https://x.com/arshalv',
+    'https://github.com/arshal-salu',
+    'https://instagram.com/arshal_salu',
+    'https://x.com/arshal__salu',
   ],
 }
 

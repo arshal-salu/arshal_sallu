@@ -12,7 +12,7 @@ export const SITE_NAME    = 'Muhammed Arshal V' as const
 export const SITE_URL     = 'https://arshalv.dev' as const
 
 /** Short handle used in social links and metadata. */
-export const SITE_HANDLE  = '@arshalv' as const
+export const SITE_HANDLE  = '@arshal__salu' as const
 
 /** Brief tagline shown in metadata and potentially in UI. */
 export const SITE_TAGLINE =

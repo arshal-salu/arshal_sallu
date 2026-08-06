@@ -35,7 +35,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Sanity CMS'],
     image: '/images/projects/ChatGPT Image Aug 5, 2026, 06_54_54 PM.png',
     demo: 'https://nova-interiors-bay.vercel.app',
-    github: 'https://github.com/arshalv/nova-interiors'
+    github: 'https://github.com/arshal-salu/nova-interiors'
   },
   {
     id: 'nuxt-school-manager',
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     techStack: ['Nuxt.js', 'Vue 3', 'PostgreSQL', 'Prisma', 'Supabase'],
     image: '/images/projects/ChatGPT Image Jul 18, 2026, 07_07_02 AM.png',
     demo: 'https://nuxt-app-plum-tau.vercel.app',
-    github: 'https://github/arshalv/nuxt-school-manager'
+    github: 'https://github.com/arshal-salu/nuxt-school-manager'
   },
   {
     id: 'bitego',
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     techStack: ['Vanilla JS', 'Tailwind CSS', 'Nitro', 'Prisma', 'PostgreSQL', 'Razorpay'],
     image: '/images/projects/bitego_gallery_1.png',
     demo: 'https://bitego-in.vercel.app',
-    github: 'https://github.com/arshalv/bitego'
+    github: 'https://github.com/arshal-salu/bitego'
   },
   {
     id: 'ecrola-engineering',
@@ -86,6 +86,6 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
     image: '/images/projects/ChatGPT Image Jul 24, 2026, 05_37_04 AM.png',
     demo: 'https://ecrola-engineering.vercel.app',
-    github: 'https://github.com/arshalv/ecrola-engineering'
+    github: 'https://github.com/arshal-salu/ecrola-engineering'
   }
 ]
