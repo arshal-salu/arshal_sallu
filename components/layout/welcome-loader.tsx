@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { DotGrid } from './background/dot-grid'
+import { GradientWaves } from './background/gradient-waves'
 
 export function WelcomeLoader() {
   const [isComplete, setIsComplete] = useState(false)
@@ -70,18 +70,29 @@ export function WelcomeLoader() {
           className="fixed inset-0 bg-black flex items-center justify-center p-6 sm:p-12 overflow-y-auto"
           style={{ zIndex: 99999 }} // Overlay above navbar and layout layers
         >
-          {/* Interactive Dot Grid Background Effect */}
-          <DotGrid
-            dotSize={10}
-            gap={15}
-            baseColor="#0f0f10"
-            activeColor="#113a2c"
-            proximity={120}
-            shockRadius={250}
-            shockStrength={5}
-            resistance={750}
-            returnDuration={1.5}
-            className="absolute inset-0 z-0 opacity-40 pointer-events-none"
+          {/* Interactive WebGL Plasma Waves Background Effect */}
+          <GradientWaves
+            horizonColor="#000000"
+            waveColor="#093121"
+            crestColor="#00ff66"
+            speed={0.4}
+            amplitude={2.5}
+            waveScale={0.6}
+            waveRatio={0.9}
+            swell={35}
+            turbulence={20}
+            tilt={1.11}
+            zoom={1.0}
+            height={5.5}
+            fogDepth={15}
+            detail="medium"
+            brightness={1.0}
+            opacity={0.3}
+            mouseInteraction={true}
+            parallaxStrength={0.5}
+            grain={true}
+            grainIntensity={0.05}
+            className="absolute inset-0 z-0 pointer-events-none"
           />
 
           {/* Centered responsive layout grid */}
