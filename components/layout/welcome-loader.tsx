@@ -95,12 +95,12 @@ export function WelcomeLoader() {
                   className="w-full max-w-[340px] bg-white border border-neutral-200 p-8 flex flex-col items-center text-center gap-6 relative overflow-hidden rounded-2xl group transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
                 >
                   {/* Big Square Profile Avatar (Black & White, Tighter professional rounding) */}
-                  <div className="relative w-40 h-40 rounded-md overflow-hidden border border-neutral-200 bg-neutral-100 shadow-sm">
+                  <div className="relative w-48 h-48 rounded-md overflow-hidden border border-neutral-200 bg-neutral-100 shadow-sm">
                     <Image
                       src="/images/projects/avatar.png"
                       alt="Muhammed Arshal V"
                       fill
-                      sizes="160px"
+                      sizes="192px"
                       priority
                       className="object-cover grayscale transition-transform duration-500 group-hover:scale-102"
                     />
