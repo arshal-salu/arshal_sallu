@@ -132,10 +132,10 @@ export function WelcomeLoader() {
               >
                 <div className="flex flex-col gap-2">
                   <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-500 uppercase">
-                    Introduction
+                    About Me
                   </span>
                   <h1 className="font-[var(--font-heading)] font-bold text-4xl sm:text-5xl tracking-wide text-white leading-none">
-                    About Me
+                    Muhammed Arshal V
                   </h1>
                 </div>
 
