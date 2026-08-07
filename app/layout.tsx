@@ -29,12 +29,11 @@ export const metadata: Metadata = {
     type: 'website', locale: 'en_US', url: 'https://arshalv.dev', siteName: 'Muhammed Arshal V',
     title: 'Muhammed Arshal V - AI Developer',
     description: 'AI Developer building intelligent applications using Generative AI and modern web technologies.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Muhammed Arshal V - AI Developer Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image', title: 'Muhammed Arshal V - AI Developer',
     description: 'AI Developer building intelligent applications using Generative AI and modern web technologies.',
-    creator: '@arshal__salu', images: ['/og-image.png'],
+    creator: '@arshal__salu',
   },
   icons: {
     icon: [
