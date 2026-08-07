@@ -23,7 +23,7 @@ interface NavLink {
 const NAV_LINKS: NavLink[] = [
   { label: 'Home',     href: `#${SECTION_IDS.hero}`,    sectionId: SECTION_IDS.hero,    icon: Home },
   { label: 'Projects', href: `#${SECTION_IDS.work}`,    sectionId: SECTION_IDS.work,    icon: Briefcase },
-  { label: 'Tools',    href: `#${SECTION_IDS.stack}`,   sectionId: SECTION_IDS.stack,   icon: Cpu },
+  { label: 'Story',    href: `#${SECTION_IDS.journey}`,   sectionId: SECTION_IDS.journey,   icon: Cpu },
   { label: 'Contact',  href: `#${SECTION_IDS.contact}`, sectionId: SECTION_IDS.contact, icon: Mail },
 ]
 
@@ -71,10 +71,10 @@ export function Navbar() {
       <nav
         aria-label="Primary navigation"
         className={cn(
-          'flex items-center gap-2 px-3 py-1.5 rounded-full pointer-events-auto transition-all duration-[var(--duration-slow)] ease-[var(--ease-default)]',
+          'flex items-center gap-2 px-3 py-1.5 rounded-full pointer-events-auto transition-all duration-[var(--duration-slow)] ease-[var(--ease-default)] border',
           isScrolled
-            ? 'bg-black/75 backdrop-blur-xl border border-[var(--color-border-subtle)] shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
-            : 'bg-transparent border border-transparent'
+            ? 'bg-black/85 backdrop-blur-xl border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
+            : 'bg-black/30 backdrop-blur-md border-white/5 shadow-none'
         )}
       >
         {NAV_LINKS.map((link) => {
@@ -87,10 +87,10 @@ export function Navbar() {
               aria-label={link.label}
               aria-current={isActive ? 'true' : undefined}
               className={cn(
-                'relative p-2.5 rounded-full transition-all duration-300 flex items-center justify-center group',
+                'relative p-2.5 rounded-full transition-all duration-300 flex items-center justify-center group border',
                 isActive
-                  ? 'text-white bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
-                  : 'nav-icon hover:bg-white/[0.04]'
+                  ? 'text-white bg-gradient-to-br from-neutral-700/30 to-neutral-900/50 border-white/10 shadow-[inset_-2px_-2px_6px_rgba(0,0,0,0.6),inset_2px_2px_6px_rgba(255,255,255,0.05)]'
+                  : 'nav-icon hover:bg-white/[0.04] border-transparent'
               )}
             >
               <Icon className="w-[18px] h-[18px] transition-transform duration-300 group-hover:scale-105" />

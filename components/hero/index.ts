@@ -10,6 +10,6 @@
  * @example
  * import { HeroSection } from '@/components/hero'
  */
-export { HeroSection }      from './hero-section'
+export { HeroSection }      from './HeroSection'
 export { ScrollIndicator }  from './scroll-indicator'
 export { ScrambleText }     from './scramble-text'

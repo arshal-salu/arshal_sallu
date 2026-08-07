@@ -104,6 +104,22 @@ export function ContactCard() {
         </div>
       </div>
 
+      {/* Custom Styles for WhatsApp Button Active Hover */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes whatsapp-glow {
+          0% { box-shadow: 0 0 12px rgba(37, 99, 235, 0.4); }
+          50% { box-shadow: 0 0 24px rgba(37, 99, 235, 0.8); }
+          100% { box-shadow: 0 0 12px rgba(37, 99, 235, 0.4); }
+        }
+        .whatsapp-hover-active:hover {
+          background-color: #2563eb !important;
+          color: #ffffff !important;
+          border-color: #3b82f6 !important;
+          transform: scale(1.03) translateY(-2px) !important;
+          animation: whatsapp-glow 2s infinite ease-in-out !important;
+        }
+      `}} />
+
       {/* Submit Button */}
       <Button
         type="submit"
@@ -117,7 +133,7 @@ export function ContactCard() {
             <ArrowRight className="w-4 h-4" />
           </motion.span>
         }
-        className="text-xs font-semibold uppercase tracking-wider shadow-[var(--shadow-glow-primary)] hover:shadow-[0_8px_24px_rgba(79,126,247,0.3)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 mt-2"
+        className="whatsapp-hover-active text-xs font-semibold uppercase tracking-wider shadow-[var(--shadow-glow-primary)] transition-all duration-300 mt-2"
       >
         Send on WhatsApp
       </Button>
