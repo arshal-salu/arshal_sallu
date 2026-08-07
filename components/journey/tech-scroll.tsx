@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { SECTION_IDS } from '@/constants'
 
 interface TechItem {
   name: string
@@ -148,7 +149,7 @@ export function TechScroll() {
   ]
 
   return (
-    <div className="w-full py-10 bg-black border-y border-[var(--color-border-subtle)] relative overflow-hidden select-none">
+    <div id={SECTION_IDS.stack} className="w-full py-10 bg-black border-y border-[var(--color-border-subtle)] relative overflow-hidden select-none">
       {/* Fade borders */}
       <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
