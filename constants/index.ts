@@ -9,7 +9,7 @@
 export const SITE_NAME    = 'Muhammed Arshal V' as const
 
 /** Canonical base URL — update when the domain changes. */
-export const SITE_URL     = 'https://arshalv.dev' as const
+export const SITE_URL     = 'https://muhammedarshal.vercel.app' as const
 
 /** Short handle used in social links and metadata. */
 export const SITE_HANDLE  = '@arshal__salu' as const

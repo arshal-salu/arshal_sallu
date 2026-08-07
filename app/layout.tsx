@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://arshalv.dev'),
+  metadataBase: new URL('https://muhammedarshal.vercel.app'),
   title: { default: 'Muhammed Arshal V', template: '%s | Muhammed Arshal V' },
   description: 'AI Developer building intelligent applications using Generative AI and modern web technologies.',
   keywords: ['AI Developer', 'Generative AI', 'Machine Learning', 'Next.js', 'React', 'TypeScript', 'Full Stack', 'Portfolio'],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   creator: 'Muhammed Arshal V',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
   openGraph: {
-    type: 'website', locale: 'en_US', url: 'https://arshalv.dev', siteName: 'Muhammed Arshal V',
+    type: 'website', locale: 'en_US', url: 'https://muhammedarshal.vercel.app', siteName: 'Muhammed Arshal V',
     title: 'Muhammed Arshal V - AI Developer',
     description: 'AI Developer building intelligent applications using Generative AI and modern web technologies.',
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     apple: [{ url: '/icon.png', sizes: '180x180', type: 'image/png' }],
     shortcut: '/favicon.ico',
   },
-  alternates: { canonical: 'https://arshalv.dev' },
+  alternates: { canonical: 'https://muhammedarshal.vercel.app' },
   formatDetection: { email: false, address: false, telephone: false },
 }
 
@@ -51,7 +51,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Muhammed Arshal V',
-  url: 'https://arshalv.dev',
+  url: 'https://muhammedarshal.vercel.app',
   jobTitle: 'AI Developer & Full-Stack Engineer',
   description: 'AI Developer building intelligent applications using Generative AI and modern web technologies.',
   sameAs: [

@@ -12,7 +12,7 @@ interface BrowserFrameProps {
   className?: string
 }
 
-export function BrowserFrame({ src, alt, url = 'https://arshalv.dev', className }: BrowserFrameProps) {
+export function BrowserFrame({ src, alt, url = 'https://muhammedarshal.vercel.app', className }: BrowserFrameProps) {
   return (
     <div
       className={cn(
