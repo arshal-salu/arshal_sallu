@@ -109,15 +109,23 @@ export function SelectedWorkSticky({ projects }: SelectedWorkStickyProps) {
                     </p>
                   </div>
 
-                  {/* Details - Engineering Challenge & Solution */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8 py-5 border-y border-[var(--color-border-subtle)]">
-                    <div>
-                      <h4 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] font-semibold text-white mb-1 sm:mb-2">Engineering Challenge</h4>
-                      <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">{activeProject.challenge}</p>
+                  {/* Details - Engineering Challenge (Top) & Solution (Bottom) */}
+                  <div className="flex flex-col gap-4 sm:gap-5 py-5 border-y border-[var(--color-border-subtle)]">
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
+                      <h4 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] font-semibold text-white">
+                        Engineering Challenge
+                      </h4>
+                      <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                        {activeProject.challenge}
+                      </p>
                     </div>
-                    <div>
-                      <h4 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] font-semibold text-white mb-1 sm:mb-2">Solution</h4>
-                      <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">{activeProject.solution}</p>
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
+                      <h4 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] font-semibold text-white">
+                        Solution
+                      </h4>
+                      <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                        {activeProject.solution}
+                      </p>
                     </div>
                   </div>
 

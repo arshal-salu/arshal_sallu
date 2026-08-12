@@ -5,6 +5,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { SECTION_IDS } from '@/constants'
 import { Container } from '@/components/ui/Container'
 import { ScrambleText } from './scramble-text'
+import { ScrollIndicator } from './scroll-indicator'
 
 /* ─── FRAMER MOTION VARIANTS ─────────────────────────────────── */
 const containerVariants = {
@@ -230,6 +231,9 @@ export function HeroSection() {
           </motion.div>
         </div>
       </Container>
+
+      {/* Scroll Down Indicator */}
+      <ScrollIndicator />
     </section>
   )
 }

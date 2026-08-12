@@ -2,7 +2,7 @@ import React from 'react'
 import { Section, Container } from '@/components/ui'
 import { projects } from '@/lib/projects'
 import { SelectedWorkSticky } from './selected-work-sticky'
-import { ProjectChapter } from './project-chapter'
+import { MobileWorkDrawer } from './mobile-work-drawer'
 import { SECTION_IDS } from '@/constants'
 
 export function WorkSection() {
@@ -17,16 +17,16 @@ export function WorkSection() {
         <SelectedWorkSticky projects={projects} />
       </div>
 
-      {/* 2. Mobile/Tablet version: Linear scrollable chapters */}
+      {/* 2. Mobile/Tablet version: Bottom Sheet Deep Dive Drawer */}
       <div className="block lg:hidden">
         <Container size="2xl" className="py-12 sm:py-16">
-          <div className="flex flex-col gap-4 mb-16">
+          <div className="flex flex-col gap-3 mb-8 sm:mb-10">
             <span className="font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white">
               Case Studies
             </span>
             <h2
               id="work-heading-mobile"
-              className="font-[var(--font-heading)] font-bold leading-tight tracking-[-0.04em] flex flex-row items-baseline gap-2 text-left text-4xl sm:text-5xl"
+              className="font-[var(--font-heading)] font-bold leading-tight tracking-[-0.04em] flex flex-row items-baseline gap-2 text-left text-3xl sm:text-4xl"
             >
               <span className="text-white">
                 Selected
@@ -38,11 +38,8 @@ export function WorkSection() {
               </span>
             </h2>
           </div>
-          <div className="flex flex-col px-1 sm:px-4">
-            {projects.map((project, index) => (
-              <ProjectChapter key={project.id} project={project} index={index} />
-            ))}
-          </div>
+
+          <MobileWorkDrawer projects={projects} />
         </Container>
       </div>
     </Section>

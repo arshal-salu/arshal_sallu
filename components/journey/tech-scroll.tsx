@@ -12,149 +12,152 @@ interface TechItem {
 export function TechScroll() {
   const techs: TechItem[] = [
     {
-      name: 'PostgreSQL',
-      color: '#336791',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-none stroke-current" strokeWidth="2">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4z" fill="currentColor" />
-        </svg>
-      )
-    },
-    {
-      name: 'Supabase',
-      color: '#3ecf8e',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M19.1 10.9h-6.2L16.2 2H8.3L4.9 13.1h6.2L8.7 22l10.4-11.1z" />
-        </svg>
-      )
-    },
-    {
       name: 'Next.js',
       color: '#ffffff',
       icon: (
-        <svg viewBox="0 0 180 180" className="w-7 h-7 fill-current">
-          <path d="M90 0C40.29 0 0 40.29 0 90C0 139.71 40.29 180 90 180C139.71 180 180 139.71 180 90C180 40.29 139.71 0 90 0ZM90 162.77C49.81 162.77 17.23 130.19 17.23 90C17.23 81.33 18.74 72.99 21.52 65.26L77.7 137.9H94.1V74.83H80.52V115.86L34.1 56.12C48.06 44.5 65.88 37.63 85.38 37.63C125.57 37.63 158.15 70.21 158.15 110.38C158.15 125.13 153.76 138.86 146.26 150.36L90 162.77ZM128.84 137.9H115.26V74.83H128.84V137.9Z" />
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12c2.81 0 5.39-.966 7.433-2.583l-9.062-11.75H8.547v8.665h1.517V8.625l7.98 10.378A11.942 11.942 0 0024 12c0-6.627-5.373-12-12-12zm4.85 6.415h1.517v6.627H16.85V6.415z" />
         </svg>
-      )
-    },
-    {
-      name: 'TypeScript',
-      color: '#3178c6',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M0 0h24v24H0V0zm22.4 22.4V1.6H1.6v20.8h20.8zM12 18.2c0-1.8 1.4-3.2 3.2-3.2s3.2 1.4 3.2 3.2V20h-1.6v-1.8c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6 1.6V20H12v-1.8zm-4.8-.8c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6 1.6V20H2.4v-2.6c0-1.8 1.4-3.2 3.2-3.2S8.8 15.6 8.8 17.4V20H7.2v-2.6z" />
-        </svg>
-      )
-    },
-    {
-      name: 'JavaScript',
-      color: '#f7df1e',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M0 0h24v24H0V0zm22.4 22.4V1.6H1.6v20.8h20.8zM10.8 18.2c0-1.2-.6-2.2-1.8-2.2s-1.8 1-1.8 2.2V20h-1.6v-1.8c0-1.8 1.4-3.2 3.4-3.2s3.4 1.4 3.4 3.2V20H10.8v-1.8zm3.2.3c0-1 .8-1.5 1.8-1.5s1.8.5 1.8 1.5V20H19v-1.8c0-1.8-1.4-3-3.2-3s-3.2 1.2-3.2 3V20H14v-1.5z" />
-        </svg>
-      )
-    },
-    {
-      name: 'Tailwind CSS',
-      color: '#38bdf8',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
-        </svg>
-      )
-    },
-    {
-      name: 'HTML',
-      color: '#e34f26',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M2.3 2L4 19.5l8 2.2 8-2.2L21.7 2H2.3zm14 7H9.2l.2 2.5h6.9l-.6 6.3-4.5 1.2-4.5-1.2-.3-3.2h2.5l.1 1.4 2.2.6 2.2-.6.3-2.6H6.6l-.6-7.3h10.9l-.6 2.1z" />
-        </svg>
-      )
-    },
-    {
-      name: 'CSS',
-      color: '#1572b6',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M2.3 2L4 19.5l8 2.2 8-2.2L21.7 2H2.3zm14 7h-7l.2 2.5h6.8l-.6 6.3-4.5 1.2-4.5-1.2-.3-3.2h2.5l.1 1.4 2.2.6 2.2-.6.3-2.6H6.4l-.6-7.3h11.1l-.6 2.1z" />
-        </svg>
-      )
-    },
-    {
-      name: 'Vercel',
-      color: '#ffffff',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M24 22.5H0L12 1.5L24 22.5Z" />
-        </svg>
-      )
-    },
-    {
-      name: 'Firebase',
-      color: '#ffca28',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M3.89 15.75L2.33 5.48c-.14-.94.94-1.57 1.63-.92l8.28 7.82-9.92 3.37zm16.22-3.37L11.83 4.56c-.69-.65-1.77-.65-2.46 0L5.78 8.04l11.45 6.37 2.88-2.03zM21 16.5l-2.06-1.15-2.88 2.03L12 21.5l8.28-7.82c.69-.65 1.77.16 1.63 1.1l-.91 1.72z" />
-        </svg>
-      )
+      ),
     },
     {
       name: 'React',
       color: '#61dafb',
       icon: (
-        <svg viewBox="-11.5 -10.23 23 20.46" className="w-7 h-7 fill-none stroke-current">
-          <circle r="2.05" fill="currentColor" />
-          <g stroke="currentColor" strokeWidth="1">
-            <ellipse rx="11" ry="4.2" />
-            <ellipse rx="11" ry="4.2" transform="rotate(60)" />
-            <ellipse rx="11" ry="4.2" transform="rotate(120)" />
-          </g>
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-current" strokeWidth="1.5">
+          <circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none" />
+          <ellipse cx="12" cy="12" rx="9.5" ry="3.8" />
+          <ellipse cx="12" cy="12" rx="9.5" ry="3.8" transform="rotate(60 12 12)" />
+          <ellipse cx="12" cy="12" rx="9.5" ry="3.8" transform="rotate(120 12 12)" />
         </svg>
-      )
+      ),
     },
     {
-      name: 'Git',
-      color: '#f05032',
+      name: 'TypeScript',
+      color: '#3178c6',
       icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="18" cy="18" r="3" />
-          <circle cx="6" cy="6" r="3" />
-          <circle cx="6" cy="18" r="3" />
-          <path d="M6 9v6M9 9l3 3M12 12v6" />
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M1.5 0h21A1.5 1.5 0 0 1 24 1.5v21a1.5 1.5 0 0 1-1.5 1.5h-21A1.5 1.5 0 0 1 0 22.5v-21A1.5 1.5 0 0 1 1.5 0zm9.78 12.86h-2.5v7.64H6.46v-7.64H3.94v-2.14h7.34v2.14zm5.54-2.14c1.84 0 3.18.96 3.18 2.58 0 1.68-1.02 2.34-2.58 2.84l-.84.26c-.72.22-1.06.46-1.06.94 0 .5.44.82 1.18.82.84 0 1.48-.36 1.86-.72l1.16 1.62c-.78.78-1.88 1.24-3.08 1.24-2.12 0-3.48-1.18-3.48-2.88 0-1.68 1.04-2.42 2.52-2.9l.86-.28c.7-.22.96-.46.96-.86 0-.44-.4-.76-1.04-.76-.74 0-1.34.3-1.74.68L13.88 11.7c.68-.62 1.68-.98 2.94-.98z" />
         </svg>
-      )
+      ),
     },
     {
-      name: 'Docker',
-      color: '#2496ed',
+      name: 'JavaScript',
+      color: '#f7df1e',
       icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M13.9 9.1h2.2v2.2h-2.2V9.1zm-2.8 0h2.2v2.2h-2.2V9.1zm-2.8 0h2.2v2.2H8.3V9.1zm-2.8 0h2.2v2.2H5.5V9.1zm2.8-2.8h2.2v2.2H8.3V6.3zm2.8 0h2.2v2.2h-2.2V6.3zm0-2.8h2.2v2.2h-2.2V3.5z" />
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M1.5 0h21A1.5 1.5 0 0 1 24 1.5v21a1.5 1.5 0 0 1-1.5 1.5h-21A1.5 1.5 0 0 1 0 22.5v-21A1.5 1.5 0 0 1 1.5 0zm10.166 12.35h-1.71v5.772c0 .914-.265 1.526-.795 1.834-.53.308-1.242.278-1.744-.082-.375-.269-.619-.714-.658-1.196l-1.581.654c.148.914.618 1.688 1.324 2.128.706.44 1.597.554 2.457.314.86-.24 1.554-.863 1.905-1.71.351-.847.33-1.857.33-2.942V12.35h-.128zm10.368 5.926c-.175-1.017-.888-1.798-2.696-2.531-.692-.303-1.405-.595-1.554-.972-.072-.258-.027-.514.186-.687.351-.284.978-.292 1.348-.06.273.171.492.484.582.871l1.547-.899c-.279-.817-.852-1.458-1.564-1.776-.713-.318-1.637-.361-2.484-.112-.848.249-1.503.885-1.677 1.744-.194.954.195 1.854.896 2.327.502.339 1.166.574 1.86.843.518.201.815.39.907.618.118.293.033.626-.214.829-.408.337-1.189.336-1.682.046-.382-.225-.66-.677-.732-1.222l-1.583.743c.189.967.753 1.743 1.528 2.115.776.371 1.775.409 2.709.099.933-.31 1.644-1.046 1.821-2.029l.004-.047z" />
         </svg>
-      )
+      ),
+    },
+    {
+      name: 'Tailwind CSS',
+      color: '#38bdf8',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'PostgreSQL',
+      color: '#336791',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M11.999 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 11.999 12 6.628 0 12.001-5.373 12.001-12 0-6.628-5.373-12-12.001-12zm4.088 4.298c.594 0 1.157.067 1.688.196 1.745.424 2.872 1.63 3.328 3.344.42 1.579.16 3.106-.74 4.456-.838 1.258-2.023 2.043-3.497 2.383-.35.08-.667.108-.94.137-.08.009-.134.053-.146.13-.15 1.002-.638 1.802-1.455 2.35-.644.432-1.385.642-2.176.63-.122-.002-.19.034-.216.155-.175.82-.67 1.45-1.465 1.838-.646.315-1.332.417-2.04.303-.896-.145-1.564-.61-1.975-1.401-.322-.62-.42-1.297-.375-1.998.058-.925.376-1.745.922-2.486.07-.095.06-.17-.03-.254-.645-.603-1.076-1.32-1.282-2.18-.282-1.18-.17-2.316.37-3.366.526-1.02 1.34-1.737 2.4-2.126.1-.038.16-.088.172-.2.03-.31.11-.607.242-.888.307-.655.795-1.08 1.48-1.254.343-.087.693-.122 1.04-.132.32-.01.638-.005.955-.005z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Supabase',
+      color: '#3ecf8e',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M21.362 9.354H12V.312a.312.312 0 0 0-.532-.22L.145 11.415a.313.313 0 0 0 .22.533H9.75v9.042a.312.312 0 0 0 .533.22l11.323-11.323a.312.312 0 0 0-.244-.533z" />
+        </svg>
+      ),
     },
     {
       name: 'Nuxt',
       color: '#00dc82',
       icon: (
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
-          <path d="M12 2L1 21h22L12 2zm0 4.8L19.2 18H4.8L12 6.8zm-2.8 7.3L7 18h4.4l-2.2-3.9z" />
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M8.88 4.25c.67-1.16 2.34-1.16 3.01 0l7.85 13.59c.67 1.16-.16 2.61-1.5 2.61H2.53c-1.34 0-2.17-1.45-1.5-2.61L8.88 4.25zm6.24 5.25c.67-1.16 2.34-1.16 3.01 0l4.62 8c.67 1.16-.16 2.61-1.5 2.61h-9.24c-1.34 0-2.17-1.45-1.5-2.61l4.61-8z" />
         </svg>
-      )
-    }
+      ),
+    },
+    {
+      name: 'Node.js',
+      color: '#339933',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M11.998 0a2.27 2.27 0 0 0-1.135.306l-8.6 4.965A2.27 2.27 0 0 0 1.13 7.237v9.526c0 .787.42 1.515 1.133 1.966l8.6 4.965c.35.202.742.306 1.135.306s.785-.104 1.135-.306l8.6-4.965a2.27 2.27 0 0 0 1.133-1.966V7.237c0-.787-.42-1.515-1.133-1.966l-8.6-4.965A2.27 2.27 0 0 0 11.998 0zm.002 2.378 7.545 4.356-3.23 1.865-4.315-2.492-4.316 2.492-3.23-1.865 7.546-4.356z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Docker',
+      color: '#2496ed',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.715h2.118a.186.186 0 00.186-.186V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.186V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.186V9.006a.185.185 0 00-.185-.186H5.136a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185m-2.928 0h2.119a.185.185 0 00.185-.186V9.006a.185.185 0 00-.185-.186H2.208a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185m21.674 1.156c-.34-.23-1.074-.35-2.035-.35-.326 0-.67.016-1.03.048-.258-.934-.84-1.636-1.745-2.106l-.51-.264-.326.474c-.45.656-.69 1.458-.69 2.32 0 .344.037.68.11 1.002-.45.163-.997.247-1.64.252H.79c-.198 0-.376.08-.5.215-.123.136-.184.316-.168.513.504 6.136 5.56 10.36 11.878 10.36 7.614 0 12-4.577 12-9.458 0-1.127-.272-2.176-.8-3.006" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Git',
+      color: '#f05032',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M23.546 10.93L13.067.452a1.503 1.503 0 0 0-2.128 0L8.88 2.51l2.678 2.677a1.785 1.785 0 0 1 2.26 2.26l2.584 2.585a1.785 1.785 0 1 1-.954.954l-2.416-2.417a1.785 1.785 0 0 1-1.922-.445L8.532 10.7a1.785 1.785 0 1 1-1.04-.424l2.58-2.58a1.785 1.785 0 0 1-.444-1.922L6.95 3.097.454 9.593a1.503 1.503 0 0 0 0 2.128l10.478 10.478a1.503 1.503 0 0 0 2.128 0l10.486-10.486a1.503 1.503 0 0 0 0-2.128" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Firebase',
+      color: '#ffca28',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.288l2.543 4.771zm16.794 3.692l-2.25-14.03a.54.54 0 0 0-.919-.295L3.316 19.365l7.857 4.427a1.62 1.62 0 0 0 1.587 0zM14.3 7.149l-2.09-3.99a.542.542 0 0 0-.964.015L3.58 17.585z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Vercel',
+      color: '#ffffff',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M24 22.5H0L12 1.5L24 22.5Z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'HTML5',
+      color: '#e34f26',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413H5.41l.418 4.706h10.966l-.427 4.793-4.39 1.218-4.388-1.218-.28-3.146H4.8l.55 6.184 6.627 1.838 6.63-1.838.983-11.057h-.001-.001z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'CSS3',
+      color: '#1572b6',
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+          <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413H5.41l.418 4.706h7.558l-.294 3.303-2.115.57-2.116-.57-.137-1.536H6.208l.27 3.037 5.5 1.523 5.498-1.523.754-8.473H18.59z" />
+        </svg>
+      ),
+    },
   ]
 
   return (
-    <div id={SECTION_IDS.stack} className="w-full py-10 bg-black border-y border-[var(--color-border-subtle)] relative overflow-hidden select-none">
-      {/* Fade borders */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+    <div id={SECTION_IDS.stack} className="w-full py-8 sm:py-10 bg-black border-y border-[var(--color-border-subtle)] relative overflow-hidden select-none">
+      {/* Edge gradient fade masks */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
 
-      {/* Styled loop */}
+      {/* Marquee loop */}
       <div className="flex w-full items-center overflow-hidden">
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -165,19 +168,25 @@ export function TechScroll() {
           .tech-track {
             display: flex;
             width: max-content;
-            animation: tech-scroll 35s linear infinite;
+            animation: tech-scroll 40s linear infinite;
+          }
+          .tech-track:hover {
+            animation-play-state: paused;
           }
         `}} />
-        <div className="tech-track gap-16 sm:gap-24">
+        <div className="tech-track gap-8 sm:gap-14">
           {[...techs, ...techs].map((tech, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-3 transition-colors duration-300 pointer-events-auto group text-[#F5F5F5] hover:text-white"
+              className="flex items-center gap-3 px-4 py-2 rounded-full border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 pointer-events-auto group cursor-default"
             >
-              <div className="shrink-0 opacity-85 group-hover:opacity-100 transition-opacity duration-300">
+              <div 
+                className="shrink-0 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-neutral-950/90 border border-white/[0.08] group-hover:scale-110 group-hover:border-white/20 transition-all duration-300 shadow-sm"
+                style={{ color: tech.color }}
+              >
                 {tech.icon}
               </div>
-              <span className="text-xs font-semibold tracking-wider font-mono transition-colors duration-300 text-current">
+              <span className="text-xs sm:text-[13px] font-semibold tracking-wider font-mono text-neutral-300 group-hover:text-white transition-colors duration-300 whitespace-nowrap">
                 {tech.name}
               </span>
             </div>
@@ -188,3 +197,4 @@ export function TechScroll() {
   )
 }
 export default TechScroll
+

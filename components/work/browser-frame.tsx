@@ -60,7 +60,7 @@ export function BrowserFrame({ src, alt, url = 'https://muhammedarshal.vercel.ap
         className="relative block w-full aspect-[16/10] bg-[hsl(222,18%,5%)] overflow-hidden cursor-pointer"
       >
         <AnimatePresence mode="popLayout">
-          <motion.div 
+          <motion.div
             key={src}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
