@@ -12,13 +12,13 @@ export function WorkSection() {
       className="relative w-full border-t border-[var(--color-border-subtle)] p-0"
       aria-labelledby="work-heading"
     >
-      {/* 1. Desktop version: Sticky Scroll */}
-      <div className="hidden lg:block">
+      {/* 1. Desktop version: Sticky Scroll (enabled only on wide + high displays) */}
+      <div className="sticky-desktop-only hidden">
         <SelectedWorkSticky projects={projects} />
       </div>
 
-      {/* 2. Mobile/Tablet version: Bottom Sheet Deep Dive Drawer */}
-      <div className="block lg:hidden">
+      {/* 2. Mobile/Tablet/Short Laptop version: Bottom Sheet Deep Dive Drawer */}
+      <div className="scrollable-flow-only block">
         <Container size="2xl" className="py-12 sm:py-16">
           <div className="flex flex-col gap-3 mb-8 sm:mb-10">
             <span className="font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white">

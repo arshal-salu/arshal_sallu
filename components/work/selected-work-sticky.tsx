@@ -54,16 +54,16 @@ export function SelectedWorkSticky({ projects }: SelectedWorkStickyProps) {
 
       {/* Sticky Viewport Container */}
       <div className="sticky top-0 h-[100dvh] w-full flex items-center overflow-hidden">
-        <Container size="2xl" className="relative h-full flex flex-col justify-center py-6 sm:py-8 lg:py-12">
+        <Container size="2xl" className="relative h-full flex flex-col justify-center py-4 lg:py-6 xl:py-8">
 
           {/* Title block - Static layout flow to prevent overlaps */}
-          <div className="flex flex-col gap-1 sm:gap-2 max-w-xl mb-4 sm:mb-6 lg:mb-8">
+          <div className="flex flex-col gap-1 sm:gap-1.5 max-w-xl mb-3 lg:mb-4">
             <span className="font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white">
               Case Studies
             </span>
             <h2
               id="work-heading"
-              className="font-[var(--font-heading)] font-bold leading-tight tracking-[-0.04em] flex flex-row items-baseline gap-2 text-left text-[clamp(1.75rem,3.5vw,2.75rem)]"
+              className="font-[var(--font-heading)] font-bold leading-tight tracking-[-0.04em] flex flex-row items-baseline gap-2 text-left text-[clamp(1.5rem,3vw,2.5rem)]"
             >
               <span className="text-white">
                 Selected
@@ -77,21 +77,21 @@ export function SelectedWorkSticky({ projects }: SelectedWorkStickyProps) {
           </div>
 
           {/* Main Grid: Visual content and anchored frame */}
-          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 xl:gap-16 items-center min-h-[55vh] lg:min-h-[60vh] py-4 relative">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12 items-center min-h-[50vh] lg:min-h-[55vh] py-2 relative">
 
             {/* Left Column: Content Canvas */}
-            <div className="col-span-1 lg:col-span-4 relative flex flex-col justify-center py-4">
+            <div className="col-span-1 lg:col-span-4 relative flex flex-col justify-center py-2">
               <AnimatePresence mode="popLayout">
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, scale: 0.98, y: 30, filter: 'blur(6px)' }}
+                  initial={{ opacity: 0, scale: 0.98, y: 20, filter: 'blur(6px)' }}
                   animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, scale: 0.98, y: -30, filter: 'blur(6px)' }}
-                  transition={{ duration: 0.45, ease: 'easeInOut' }}
-                  className="w-full flex flex-col gap-4 sm:gap-6 lg:gap-8 justify-center"
+                  exit={{ opacity: 0, scale: 0.98, y: -20, filter: 'blur(6px)' }}
+                  transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  className="w-full flex flex-col gap-3 sm:gap-4 lg:gap-5 justify-center"
                 >
                   {/* Project Header Info */}
-                  <div className="flex flex-col gap-2 sm:gap-3">
+                  <div className="flex flex-col gap-1 sm:gap-2">
                     <div className="flex items-center gap-2 text-xs sm:text-sm font-mono uppercase tracking-[0.25em]">
                       <span className="font-bold text-white">
                         0{activeIndex + 1}
@@ -101,44 +101,44 @@ export function SelectedWorkSticky({ projects }: SelectedWorkStickyProps) {
                         {activeProject.category}
                       </span>
                     </div>
-                    <h3 className="font-bold tracking-tight text-[var(--color-text)] leading-tight text-xl sm:text-2xl lg:text-3xl">
+                    <h3 className="font-bold tracking-tight text-[var(--color-text)] leading-tight text-lg sm:text-xl lg:text-2xl">
                       {activeProject.title}
                     </h3>
-                     <p className="text-sm sm:text-base lg:text-[1.0625rem] text-[var(--color-text-secondary)] leading-relaxed max-w-[540px]">
+                    <p className="text-xs sm:text-sm text-[var(--color-text-secondary)] leading-relaxed max-w-[540px]">
                       {activeProject.description}
                     </p>
                   </div>
 
                   {/* Details - Engineering Challenge (Top) & Solution (Bottom) */}
-                  <div className="flex flex-col gap-4 sm:gap-5 py-5 border-y border-[var(--color-border-subtle)]">
-                    <div className="flex flex-col gap-1 sm:gap-1.5">
-                      <h4 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] font-semibold text-white">
+                  <div className="flex flex-col gap-3 sm:gap-3.5 py-3 border-y border-[var(--color-border-subtle)]">
+                    <div className="flex flex-col gap-0.5 sm:gap-1">
+                      <h4 className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] font-semibold text-white">
                         Engineering Challenge
                       </h4>
-                      <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                      <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
                         {activeProject.challenge}
                       </p>
                     </div>
-                    <div className="flex flex-col gap-1 sm:gap-1.5">
-                      <h4 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] font-semibold text-white">
+                    <div className="flex flex-col gap-0.5 sm:gap-1">
+                      <h4 className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] font-semibold text-white">
                         Solution
                       </h4>
-                      <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                      <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
                         {activeProject.solution}
                       </p>
                     </div>
                   </div>
 
                   {/* Tech Stack */}
-                  <div className="flex flex-col gap-2.5">
-                    <h4 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] font-semibold text-white">
+                  <div className="flex flex-col gap-2">
+                    <h4 className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] font-semibold text-white">
                       Technology Stack
                     </h4>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1">
                       {activeProject.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-1 text-[10px] sm:px-3 sm:py-1.5 sm:text-xs font-mono rounded-[var(--radius-md)] border border-[var(--color-border-subtle)] bg-[var(--color-surface)] text-[var(--color-text-secondary)] hover:border-neutral-400 hover:text-[var(--color-text)] hover:shadow-[0_0_12px_rgba(255,255,255,0.06)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white transition-all duration-300 select-none"
+                          className="px-2 py-0.5 text-[10px] sm:px-2.5 sm:py-1 font-mono rounded-[var(--radius-md)] border border-[var(--color-border-subtle)] bg-[var(--color-surface)] text-[var(--color-text-secondary)] hover:border-neutral-400 hover:text-[var(--color-text)] hover:shadow-[0_0_12px_rgba(255,255,255,0.06)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white transition-all duration-300 select-none"
                           tabIndex={0}
                         >
                           {tech}

@@ -23,16 +23,16 @@ export const projects: Project[] = [
   {
     id: 'nova-interiors',
     title: 'NOVA Interiors',
-    category: 'Luxury Interior Design Studio Website',
-    description: 'A premium portfolio and client acquisition platform for a high-end interior design studio. Engineered with focus on visual fidelity, micro-interactions, and content management.',
-    challenge: 'High-end interior design studios rely on ultra-high-resolution imagery to convert clients. Rerendering large images without layout shift, maintaining smooth transitions, and providing a lightweight content management system were the primary technical hurdles.',
-    solution: 'Built a headless architecture using Next.js and Sanity CMS. Leveraged Next.js Image Optimization API with custom LQIP (Low-Quality Image Placeholders) and layout constraints. Integrated custom Framer Motion page transitions to create a tactile, luxury user experience.',
+    category: 'Luxury Design Studio & CMS Admin',
+    description: 'A premium portfolio and client acquisition platform for a high-end interior design studio, featuring a secured administration panel, Server Actions, and a public Supabase media bucket.',
+    challenge: 'Establishing a robust server-side data layer with Supabase RLS and checkIsAdmin() role verification, combined with a zero-config fallback strategy that gracefully serves mock datasets if environment keys are missing during builds.',
+    solution: 'Engineered Server Actions with database fallbacks. Secured content tables in Supabase using Row-Level Security (RLS) policies and admin lookup checks. Created a high-fidelity dark editorial interface with Tailwind CSS v4, GSAP/Framer Motion animations, and Lenis smooth scrolling.',
     highlights: [
-      'Implemented headless content orchestration with Sanity CMS, providing live-editing previews.',
-      'Created custom scroll-driven web animations using Framer Motion with hardware acceleration.',
-      'Achieved a near-perfect core web vitals score through aggressive static site generation (SSG).'
+      'Designed a relational Supabase schema with RLS policies enabled across all content management tables (projects, services, journal, inquiries).',
+      'Implemented a zero-config database fallback strategy to load comprehensive offline mock datasets if environment keys are omitted.',
+      'Created a luxurious dark editorial UI utilizing Lenis smooth scrolling, GSAP ScrollTriggers, and Framer Motion transitions.'
     ],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Sanity CMS'],
+    techStack: ['Next.js 16.2', 'TypeScript 5', 'Supabase', 'Tailwind CSS v4', 'GSAP', 'Framer Motion', 'Lenis', 'React Hook Form', 'Zod'],
     image: '/images/projects/ChatGPT Image Aug 5, 2026, 06_54_54 PM.png',
     demo: 'https://nova-interiors-bay.vercel.app',
     github: 'https://github.com/arshal-salu/nova-interiors'
@@ -41,15 +41,15 @@ export const projects: Project[] = [
     id: 'nuxt-school-manager',
     title: 'Nuxt School Manager',
     category: 'Centralized School Management Platform',
-    description: 'A comprehensive, multi-tenant administrative dashboard for managing student enrollment, academic reporting, staff schedules, and institutional payments.',
-    challenge: 'Handling relational data streams (like grades, attendance logs, and fee payments) for hundreds of active concurrent sessions requires a robust, responsive interface and an optimized database schema that prevents lockups or excessive query times.',
-    solution: 'Designed a modular dashboard system with Nuxt.js and Vue 3. Implemented a relational database schema using PostgreSQL and Prisma ORM. Integrated Supabase for authentication and real-time database subscription events, ensuring instantaneous sync across staff portals.',
+    description: 'A comprehensive administrative dashboard built with Nuxt 4 and Supabase for managing student rosters, roll numbers, teacher mappings, academic grades, and bulk attendance tracking.',
+    challenge: 'Coordinating complex relational structures (divisions, teachers, subjects, attendance, grades) under Nuxt 4\'s app/ directory structure, implementing passwordless Email OTP authentication with global middleware guards, and handling student avatar uploads to Supabase storage buckets.',
+    solution: 'Designed a responsive dashboard using Nuxt 4 and Tailwind CSS. Implemented email OTP verification flows and global routing middleware. Configured a secure PostgreSQL engine on Supabase for relational queries, automated roll number assignments (R-YYYY-XXXX), and integrated bulk logging for class attendance and exam grades.',
     highlights: [
-      'Designed a relational database schema using Prisma, featuring indexing for fast enrollment queries.',
-      'Utilized Supabase real-time triggers to instantly push schedule changes to student devices.',
-      'Engineered a secure multi-tenant role authorization system with custom middleware.'
+      'Built a multi-portal system utilizing Nuxt 4\'s new app directory structure and global navigation middleware controls.',
+      'Designed a relational PostgreSQL schema on Supabase featuring automated cascading deletes for student profiles and grades.',
+      'Developed a bulk log system for academic rosters (Present, Absent, Late) and printable student 360 performance report cards.'
     ],
-    techStack: ['Nuxt.js', 'Vue 3', 'PostgreSQL', 'Prisma', 'Supabase'],
+    techStack: ['Nuxt 4', 'Vue 3', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Email OTP'],
     image: '/images/projects/ChatGPT Image Jul 18, 2026, 07_07_02 AM.png',
     demo: 'https://nuxt-app-plum-tau.vercel.app',
     github: 'https://github.com/arshal-salu/nuxt-school-manager'
@@ -58,15 +58,15 @@ export const projects: Project[] = [
     id: 'bitego',
     title: 'BiteGo',
     category: 'Modern Food Ordering Platform',
-    description: 'A fast, client-centric food ordering and checkout interface optimized for low-latency searches, cart operations, and local payment integration.',
-    challenge: 'Food checkout platforms suffer high dropoff rates if checkout steps are slow or complex. Minimizing browser script execution time and coordinating fast payment updates were critical goals.',
-    solution: 'Created a high-performance frontend using Vanilla JS and Tailwind CSS for minimal bundle size. Utilized Nitro as a modern, lightweight backend server, and structured a PostgreSQL database via Prisma. Integrated Razorpay API for immediate webhook-verified checkouts.',
+    description: 'A fast, client-centric food delivery and merchant portal powered by Nuxt 3, Pinia, and Prisma. Supports dynamic cart operations, Razorpay payment processing, and email OTP verification.',
+    challenge: 'Coordinating low-latency cart states via Pinia with a complex PostgreSQL relational schema (Users, Stores, Orders, Reviews) managed by Prisma, while implementing custom password hashing, JWT authorization, and email OTP dispatching via Nodemailer.',
+    solution: 'Built serverless Nitro API routes for stores and products. Integrated Pinia stores for reactive shopping cart state. Implemented Bcrypt/JWT authentication with Zod input validation, Nodemailer email OTP dispatchers, and integrated Razorpay payment webhooks.',
     highlights: [
-      'Developed a zero-dependency local state store in Vanilla JS for immediate UI responses.',
-      'Configured Nitro server routes to achieve sub-100ms API responses for local food vendor listings.',
-      'Integrated Razorpay checkout workflow with secure server-side webhook authentication.'
+      'Structured a relational PostgreSQL database utilizing Prisma ORM with custom seeding and migration setups.',
+      'Developed a custom verification pipeline sending OTP verification codes via Nodemailer.',
+      'Integrated Razorpay checkout client SDKs coupled with secure serverless webhooks for instant order confirmation.'
     ],
-    techStack: ['Vanilla JS', 'Tailwind CSS', 'Nitro', 'Prisma', 'PostgreSQL', 'Razorpay'],
+    techStack: ['Nuxt 3', 'Pinia', 'Prisma', 'PostgreSQL', 'Tailwind CSS', 'Razorpay', 'Zod'],
     image: '/images/projects/bitego_gallery_1.png',
     demo: 'https://bitego-in.vercel.app',
     github: 'https://github.com/arshal-salu/bitego'
@@ -75,15 +75,15 @@ export const projects: Project[] = [
     id: 'ecrola-engineering',
     title: 'Ecrola Engineering',
     category: 'Corporate Engineering Website',
-    description: 'A high-performance corporate platform presenting industrial engineering projects, machinery catalogs, and technical service details.',
-    challenge: 'Engineering catalogs feature complex CAD drawings and specifications that are difficult to present responsively. The client required a clean corporate design that displays complex diagrams legibly on all screens.',
-    solution: 'Crafted a custom web app using Next.js and Tailwind CSS. Built custom responsive vector display widgets that render scale-independent blueprints. Leveraged Framer Motion to animate the breakdown of engineering assemblies.',
+    description: 'A dynamic corporate web application for a precision engineering firm, integrating a Next.js App Router frontend with a Supabase PostgreSQL backend database.',
+    challenge: 'Migrating a legacy static web template into a modular Next.js 16.2 App Router model, designing PostgreSQL tables (products, gallery, contacts) on Supabase with strict Row Level Security (RLS) policies, and implementing touch-enabled Swiper sliders and WhatsApp support triggers.',
+    solution: 'Built Server Components and pages under ecrola-next/app/ styled with TailwindCSS v4. Integrated Supabase client connections for fetching catalog products and galleries. Implemented appointment inquiry contact forms with secure database mutation hooks and Framer Motion animation reveals.',
     highlights: [
-      'Created interactive SVG blueprints that scale responsively across mobile and desktop displays.',
-      'Configured dynamic segment-based static path generation for catalog items.',
-      'Developed custom physics-based hover transitions for machinery catalog views.'
+      'Architected a Next.js App Router website featuring responsive routing paths for about, contact, galleries, and product catalogs.',
+      'Designed and seeded a relational Supabase database with RLS policies enabled across all tables for secure public query execution.',
+      'Developed custom image sliders utilizing Swiper slide-galleries combined with micro-interactions powered by Framer Motion.'
     ],
-    techStack: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
+    techStack: ['Next.js 16.2', 'React 19', 'TypeScript 5', 'TailwindCSS v4', 'Framer Motion', 'Supabase', 'Swiper', 'Lucide React'],
     image: '/images/projects/ChatGPT Image Jul 24, 2026, 05_37_04 AM.png',
     demo: 'https://ecrola-engineering.vercel.app',
     github: 'https://github.com/arshal-salu/ecrola-engineering'

@@ -265,3 +265,22 @@ img, video, svg {
 .nav-icon:hover {
   color: #ffffff !important;
 }
+
+/* ─── STICKY WORK SECTION HEIGHT RESPONSIVENESS ──────────────── */
+@media (min-width: 1024px) and (min-height: 820px) {
+  .sticky-desktop-only {
+    display: block !important;
+  }
+  .scrollable-flow-only {
+    display: none !important;
+  }
+}
+@media (max-width: 1023px), (max-height: 819px) {
+  .sticky-desktop-only {
+    display: none !important;
+  }
+  .scrollable-flow-only {
+    display: block !important;
+  }
+}
+

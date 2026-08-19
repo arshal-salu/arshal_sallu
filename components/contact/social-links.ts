@@ -16,11 +16,6 @@ export const socialLinks: SocialLink[] = [
     label: 'Follow on Instagram'
   },
   {
-    name: 'X',
-    url: 'https://x.com/arshal__salu',
-    label: 'Follow on X'
-  },
-  {
     name: 'Email',
     url: 'mailto:arshalsallu@gmail.com',
     label: 'Send an email'
