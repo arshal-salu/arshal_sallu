@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { FileText } from 'lucide-react'
 import { GradientWaves } from './background/gradient-waves'
 
 export function WelcomeLoader() {
@@ -110,19 +111,19 @@ export function WelcomeLoader() {
                   {/* Top Half: Big Bold Flush Image */}
                   <div className="relative w-full aspect-square bg-neutral-100 border-b border-neutral-200 overflow-hidden">
                     <Image
-                      src="/images/projects/avatar.png"
+                      src="/images/projects/ChatGPT Image Jul 28, 2026, 08_04_37 AM (1).png"
                       alt="Muhammed Arshal V"
                       fill
                       sizes="340px"
                       priority
-                      className="object-cover grayscale transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 
                   {/* Bottom Half: Title details with padding */}
                   <div className="p-8 flex flex-col items-center text-center gap-2">
                     <h2 className="font-[var(--font-heading)] font-bold text-xl tracking-wide" style={{ color: '#171717' }}>
-                      Muhammed Arshal v
+                      Muhammed Arshal V
                     </h2>
                     <p className="font-mono text-[10px] uppercase tracking-widest font-semibold" style={{ color: '#525252' }}>
                       AI Full Stack Developer
@@ -135,7 +136,7 @@ export function WelcomeLoader() {
               </div>
             )}
 
-            {/* Right Column: About Me presentation & Explore Button */}
+            {/* Right Column: About Me presentation & Explore / Resume Buttons */}
             {isMounted && (
               <motion.div
                 variants={textVariants}
@@ -161,13 +162,25 @@ export function WelcomeLoader() {
                   </p>
                 </div>
 
-                {/* Explore Portfolio CTA Button */}
-                <button
-                  onClick={handleExplore}
-                  className="px-8 py-3.5 rounded-full bg-white text-black font-mono text-xs font-bold tracking-widest hover:bg-neutral-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] select-none mt-4 border border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] active:scale-95"
-                >
-                  EXPLORE PORTFOLIO
-                </button>
+                {/* Explore Portfolio & View Resume CTA Buttons */}
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-4">
+                  <button
+                    onClick={handleExplore}
+                    className="px-8 py-3.5 rounded-full bg-white text-black font-mono text-xs font-bold tracking-widest hover:bg-neutral-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] select-none border border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] active:scale-95 cursor-pointer"
+                  >
+                    EXPLORE PORTFOLIO
+                  </button>
+
+                  <a
+                    href="/Muhammed_Arshal_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3.5 rounded-full border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 font-mono text-xs font-bold tracking-widest hover:bg-emerald-500/20 hover:border-emerald-500/80 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.2)] select-none backdrop-blur-sm active:scale-95 flex items-center gap-2"
+                  >
+                    <FileText size={16} />
+                    <span>VIEW RESUME</span>
+                  </a>
+                </div>
               </motion.div>
             )}
 
