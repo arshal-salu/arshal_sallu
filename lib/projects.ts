@@ -21,23 +21,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'nova-interiors',
-    title: 'NOVA Interiors',
-    category: 'Luxury Design Studio & CMS Admin',
-    description: 'A premium portfolio and client acquisition platform for a high-end interior design studio, featuring a secured administration panel, Server Actions, and a public Supabase media bucket.',
-    challenge: 'Establishing a robust server-side data layer with Supabase RLS and checkIsAdmin() role verification, combined with a zero-config fallback strategy that gracefully serves mock datasets if environment keys are missing during builds.',
-    solution: 'Engineered Server Actions with database fallbacks. Secured content tables in Supabase using Row-Level Security (RLS) policies and admin lookup checks. Created a high-fidelity dark editorial interface with Tailwind CSS v4, GSAP/Framer Motion animations, and Lenis smooth scrolling.',
-    highlights: [
-      'Designed a relational Supabase schema with RLS policies enabled across all content management tables (projects, services, journal, inquiries).',
-      'Implemented a zero-config database fallback strategy to load comprehensive offline mock datasets if environment keys are omitted.',
-      'Created a luxurious dark editorial UI utilizing Lenis smooth scrolling, GSAP ScrollTriggers, and Framer Motion transitions.'
-    ],
-    techStack: ['Next.js 16.2', 'TypeScript 5', 'Supabase', 'Tailwind CSS v4', 'GSAP', 'Framer Motion', 'Lenis', 'React Hook Form', 'Zod'],
-    image: '/images/projects/ChatGPT Image Aug 5, 2026, 06_54_54 PM.png',
-    demo: 'https://nova-interiors-bay.vercel.app',
-    github: 'https://github.com/arshal-salu/nova-interiors'
-  },
-  {
     id: 'nuxt-school-manager',
     title: 'Nuxt School Manager',
     category: 'Centralized School Management Platform',
