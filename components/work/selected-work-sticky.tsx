@@ -23,33 +23,29 @@ export function SelectedWorkSticky({ projects }: SelectedWorkStickyProps) {
     offset: ['start start', 'end end'],
   })
 
-  // Stable hysteresis scroll thresholds to prevent boundary flickering
+  // Dynamically calculate activeIndex based on projects count and scroll progress
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    let newIndex = activeIndex
-    if (activeIndex === 0) {
-      if (latest >= 0.26) newIndex = 1
-    } else if (activeIndex === 1) {
-      if (latest < 0.24) newIndex = 0
-      else if (latest >= 0.51) newIndex = 2
-    } else if (activeIndex === 2) {
-      if (latest < 0.49) newIndex = 1
-      else if (latest >= 0.76) newIndex = 3
-    } else if (activeIndex === 3) {
-      if (latest < 0.74) newIndex = 2
-    }
+    const count = projects.length
+    if (count <= 1) return
 
-    if (newIndex !== activeIndex) {
-      setActiveIndex(newIndex)
+    const computedIndex = Math.min(
+      Math.max(Math.floor(latest * count), 0),
+      count - 1
+    )
+
+    if (computedIndex !== activeIndex) {
+      setActiveIndex(computedIndex)
     }
   })
 
-  const activeProject = projects[activeIndex]
+  const activeProject = projects[activeIndex] ?? projects[0]
 
   return (
     <div
       ref={containerRef}
       data-work-container="true"
-      className="relative w-full h-[400vh]"
+      className="relative w-full"
+      style={{ height: `${Math.max(projects.length, 1) * 100}vh` }}
     >
 
       {/* Sticky Viewport Container */}
