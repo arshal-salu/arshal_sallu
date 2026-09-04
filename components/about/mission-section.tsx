@@ -30,8 +30,6 @@ import {
   RefreshCw,
   Target,
   Lightbulb,
-  ArrowRight,
-  FileText,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -219,42 +217,7 @@ export function MissionSection() {
               </p>
             </motion.div>
 
-            {/* Action Buttons: Explore Portfolio & View Resume */}
-            <motion.div variants={reduced ? {} : itemVariants} className="flex flex-wrap items-center gap-4 pt-1">
-              <a
-                href={`#${SECTION_IDS.work}`}
-                className={[
-                  'inline-flex items-center justify-center gap-2',
-                  'px-6 py-3 rounded-full',
-                  'bg-white text-black font-semibold text-xs sm:text-sm font-mono uppercase tracking-wider',
-                  'hover:bg-neutral-200 transition-all duration-300',
-                  'shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)]',
-                  'active:scale-[0.98]',
-                ].join(' ')}
-              >
-                <span>Explore Portfolio</span>
-                <ArrowRight size={16} />
-              </a>
 
-              <a
-                href="/Muhammed_Arshal_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={[
-                  'inline-flex items-center justify-center gap-2',
-                  'px-6 py-3 rounded-full',
-                  'border border-emerald-500/40 bg-emerald-500/10 text-emerald-400',
-                  'font-semibold text-xs sm:text-sm font-mono uppercase tracking-wider',
-                  'hover:bg-emerald-500/20 hover:border-emerald-500/70 transition-all duration-300',
-                  'shadow-[0_0_20px_rgba(16,185,129,0.15)]',
-                  'backdrop-blur-sm',
-                  'active:scale-[0.98]',
-                ].join(' ')}
-              >
-                <FileText size={16} />
-                <span>View Resume</span>
-              </a>
-            </motion.div>
 
             {/* Divider */}
             <motion.div variants={reduced ? {} : itemVariants}>
