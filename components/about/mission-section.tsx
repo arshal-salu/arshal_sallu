@@ -24,55 +24,55 @@
  *   No unnecessary state — purely declarative animations.
  */
 
-import { useRef }                              from 'react'
+import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 import {
   RefreshCw,
   Target,
   Lightbulb,
   type LucideIcon,
-}                                              from 'lucide-react'
+} from 'lucide-react'
 
-import { SECTION_IDS }    from '@/constants'
-import { Container }      from '@/components/ui/Container'
+import { SECTION_IDS } from '@/constants'
+import { Container } from '@/components/ui/Container'
 import { MilestoneJourney } from './milestone-journey'
 
 /* ─── PRINCIPLES DATA ────────────────────────────────────────── */
 interface Principle {
-  icon:        LucideIcon
-  title:       string
+  icon: LucideIcon
+  title: string
   description: string
 }
 
 const PRINCIPLES: Principle[] = [
   {
-    icon:        Lightbulb,
-    title:       'Learn Continuously',
+    icon: Lightbulb,
+    title: 'Learn Continuously',
     description: 'Every domain holds something worth understanding — curiosity is the only prerequisite.',
   },
   {
-    icon:        Target,
-    title:       'Build with Purpose',
+    icon: Target,
+    title: 'Build with Purpose',
     description: "Good software solves a real problem clearly and doesn't apologise for its constraints.",
   },
   {
-    icon:        RefreshCw,
-    title:       'Keep Improving',
+    icon: RefreshCw,
+    title: 'Keep Improving',
     description: 'The gap between what you built and what you know now is always worth closing.',
   },
 ]
 
 /* ─── ANIMATION VARIANTS ─────────────────────────────────────── */
 const sectionVariants = {
-  hidden:  {},
+  hidden: {},
   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
 }
 
 const itemVariants = {
-  hidden:  { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    y:       0,
+    y: 0,
     transition: {
       duration: 0.55,
       ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
@@ -81,13 +81,13 @@ const itemVariants = {
 }
 
 const rightVariants = {
-  hidden:  { opacity: 0, x: 24 },
+  hidden: { opacity: 0, x: 24 },
   visible: {
     opacity: 1,
-    x:       0,
+    x: 0,
     transition: {
       duration: 0.6,
-      delay:    0.2,
+      delay: 0.2,
       ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
     },
   },
@@ -142,9 +142,9 @@ function SectionDivider() {
 
 /* ─── MAIN COMPONENT ─────────────────────────────────────────── */
 export function MissionSection() {
-  const ref      = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px 0px' })
-  const reduced  = useReducedMotion() ?? false
+  const reduced = useReducedMotion() ?? false
 
   const animateIn = isInView || reduced
 
@@ -167,7 +167,7 @@ export function MissionSection() {
           className="absolute -left-[20%] top-[20%] h-[500px] w-[500px] rounded-full opacity-[0.04]"
           style={{
             background: 'radial-gradient(circle, var(--color-secondary) 0%, transparent 70%)',
-            filter:     'blur(60px)',
+            filter: 'blur(60px)',
           }}
         />
       </div>

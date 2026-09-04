@@ -14,17 +14,17 @@ import { SECTION_IDS } from '@/constants'
 import { cn } from '@/lib/utils'
 
 interface NavLink {
-  label:     string
-  href:      string
+  label: string
+  href: string
   sectionId: string
-  icon:      React.ComponentType<{ className?: string }>
+  icon: React.ComponentType<{ className?: string }>
 }
 
 const NAV_LINKS: NavLink[] = [
-  { label: 'Home',     href: `#${SECTION_IDS.hero}`,    sectionId: SECTION_IDS.hero,    icon: Home },
-  { label: 'Projects', href: `#${SECTION_IDS.work}`,    sectionId: SECTION_IDS.work,    icon: Briefcase },
-  { label: 'Story',    href: `#${SECTION_IDS.journey}`,   sectionId: SECTION_IDS.journey,   icon: Cpu },
-  { label: 'Contact',  href: `#${SECTION_IDS.contact}`, sectionId: SECTION_IDS.contact, icon: Mail },
+  { label: 'Home', href: `#${SECTION_IDS.hero}`, sectionId: SECTION_IDS.hero, icon: Home },
+  { label: 'Projects', href: `#${SECTION_IDS.work}`, sectionId: SECTION_IDS.work, icon: Briefcase },
+  { label: 'Story', href: `#${SECTION_IDS.journey}`, sectionId: SECTION_IDS.journey, icon: Cpu },
+  { label: 'Contact', href: `#${SECTION_IDS.contact}`, sectionId: SECTION_IDS.contact, icon: Mail },
 ]
 
 export function Navbar() {
@@ -94,7 +94,7 @@ export function Navbar() {
               )}
             >
               <Icon className="w-[18px] h-[18px] transition-transform duration-300 group-hover:scale-105" />
-              
+
               {/* Custom Animated Tooltip */}
               <span className="absolute top-full left-1/2 -translate-x-1/2 mt-3 px-2.5 py-1 text-[10px] font-mono tracking-widest uppercase bg-neutral-950/95 border border-neutral-800/80 text-neutral-200 rounded-md opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-1 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[0_4px_20px_rgba(0,0,0,0.8)] z-50 whitespace-nowrap">
                 {link.label}
