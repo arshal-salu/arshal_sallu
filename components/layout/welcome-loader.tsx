@@ -175,7 +175,7 @@ export function WelcomeLoader() {
                     href="/Muhammed_Arshal_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-8 py-3.5 rounded-full border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 font-mono text-xs font-bold tracking-widest hover:bg-emerald-500/20 hover:border-emerald-500/80 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.2)] select-none backdrop-blur-sm active:scale-95 flex items-center gap-2"
+                    className="px-8 py-3.5 rounded-full bg-white text-black font-mono text-xs font-bold tracking-widest hover:bg-neutral-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] select-none border border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] active:scale-95 inline-flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <FileText size={16} />
                     <span>VIEW RESUME</span>
